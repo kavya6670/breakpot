@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "breakbot"
+version = "0.1.0"
+description = "Dependency-upgrade impact analysis: what actually breaks when you upgrade, with changelog-cited verdicts and generated fix patches."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=2.2",
+]
+
+[project.optional-dependencies]
+demo = ["pydantic>=2.6", "pydantic-settings>=2.0", "sqlalchemy>=2.0", "pytest>=7"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+breakbot = "breakbot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+breakbot = ["data/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"
+markers = [
+    "slow: end-to-end tests that run subprocesses and the demo app",
+]
