@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# BreakBot work dirs / generated reports
+.breakbot-work/
+breakbot-report.html
+*.rej
+.orig/

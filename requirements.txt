@@ -1,0 +1,6 @@
+flask>=2.2
+# optional extras for running/developing the demo and test suite:
+#   pydantic>=2.6
+#   pydantic-settings>=2.0
+#   sqlalchemy>=2.0
+#   pytest>=7
